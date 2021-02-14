@@ -1,13 +1,20 @@
+from operator import methodcaller
+
 class Matrix:
     def __init__(self, matrix_string):
-        self.matrix_string = matrix_string
-        self.arr = matrix_string.splitlines()
+        rows_arr = matrix_string.splitlines()
+        sep_nums = list(map(methodcaller('split', ' '), rows_arr))
+        matrix = []
+        for arr in sep_nums:
+            digits = list(map(int, arr))
+            matrix.append(digits)
+        self.matrix = matrix
 
     def row(self, index):
-        return list(map(int, self.arr[index - 1].split()))
+        return self.matrix[index - 1]
 
     def column(self, index):
-        col_list = []
-        for i in range(len(self.arr)):
-            col_list.append(self.arr[i].split()[index - 1])
-        return list(map(int, col_list))
+        col = []
+        for row in self.matrix:
+            col.append(row[index - 1])
+        return col
