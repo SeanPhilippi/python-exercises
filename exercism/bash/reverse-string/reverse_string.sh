@@ -2,4 +2,4 @@
 set -o noglob
 
 WORD=$1
-echo $WORD | rev 
+echo "$WORD" | rev 
