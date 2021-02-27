@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -o noglob
 
-WORD=$1
-echo "$WORD" | rev 
+$1
+echo "$1" | rev 

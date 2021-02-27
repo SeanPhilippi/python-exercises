@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-NAME=$1
-echo "One for ${NAME:-you}, one for me."
+name=$1
+echo "One for ${name:-you}, one for me."
 
