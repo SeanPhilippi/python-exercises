@@ -2,6 +2,7 @@
 # if an x at the end, it represents 10
 # ignore - characters
 def is_valid(isbn):
+    print('isbn', isbn)
     nums = isbn.replace('-', '')
     print('nums', nums)
     # do regex check for digits 0-9 or x or X only
@@ -9,8 +10,15 @@ def is_valid(isbn):
     if len(nums) != 10:
         return False
     ints = []
-    for num in nums:
-        ints.append(int(num))
+    for i, num in enumerate(nums):
+        print('num', num)
+        if str.isdigit(num):
+            ints.append(int(num))
+        else:
+            if num == 'X' and i == 9:
+                ints.append(10)
+            else:
+                return False
     # ints = list(map(int, nums))
     print('ints', ints)
     # do calculation using array of nums
@@ -22,5 +30,7 @@ def is_valid(isbn):
     product = product % 11
     if product == 0:
         return True
+    else:
+        return False
 
 print(is_valid('3-598-21508-9'))
