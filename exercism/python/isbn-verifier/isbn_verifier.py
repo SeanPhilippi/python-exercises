@@ -1,9 +1,7 @@
 def is_valid(isbn):
-    nums = isbn.replace('-', '')
+    ints, nums = [], isbn.replace('-', '')
 
     if len(nums) != 10: return False 
-
-    ints = []
 
     for i, num in enumerate(nums):
         if str.isdigit(num):
@@ -14,8 +12,7 @@ def is_valid(isbn):
             else:
                 return False
 
-    product = 0
-    multiplier = 10
+    product, multiplier = 0, 10
 
     for num in ints:
         product += num * multiplier 
