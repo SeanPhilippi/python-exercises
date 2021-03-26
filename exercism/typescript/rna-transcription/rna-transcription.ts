@@ -13,7 +13,7 @@ class Transcriptor {
   }
 
   toRna = (dna: string): string => {
-    const rnaArray = [];
+    const rnaArray: string[] = [];
     for (const letter of dna) {
       if (letter in this.rnaHash) {
         rnaArray.push(this.rnaHash[letter]);
