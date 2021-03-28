@@ -6,12 +6,8 @@ export default class Pangram {
   alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
   isPangram = (): boolean | string => {
-    const cleanedSentence = this.sentence.replace(/[^a-z]+/gi, '').toLowerCase().split('').sort().join('');
-    const lettersString = [...new Set(cleanedSentence)].join('');
-    if (lettersString == this.alphabet) {
-      return true;
-    } else {
-      return false;
-    }
+      const cleanedSentence = this.sentence.replace(/[^a-z]+/gi, '').toLowerCase().split('').sort().join('');
+      const lettersString = [...new Set(cleanedSentence)].join('');
+      return lettersString == this.alphabet ? true : false;
   }
 }
