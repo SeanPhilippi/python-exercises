@@ -1,2 +1,4 @@
 **/node_modules
 **/mysession.vim
+**/.dart_tool
+**/.packages
