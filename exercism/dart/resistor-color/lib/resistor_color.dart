@@ -13,6 +13,6 @@ class ResistorColor {
     ];
     
     int colorCode(String color) {
-      return this.colors.indexOf(color);
+      return colors.indexOf(color);
     }
 }
